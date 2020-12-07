@@ -49,17 +49,18 @@ function runEnter() {
     var filteredData = tableData.filter((date) => date.datetime === inputValue);
     console.log(filteredData);
     //return(filteredData);
-/////////////////////////////////////////////////
-    //Select Unordered list element by class name
+
+
+    /////////////////////////////////////////////////
+
+
+    //Select Unordered list element by ID
     //var list = d3.select(".list-group");
     var list = d3.select("#filters");
 
-    //Remove all data from the table to replace with filtered data
+    //Remove all data from the table to replace with filtered data (Lesson 3, Activity 9)
     tbody.html("");
-
-    //Append filtered data to list
-    //list.append("li").text(`${filteredData}`);
-
+  
     //Use function similar to above to display filteredData table
 
     filteredData.forEach(function (byDate) {
@@ -68,7 +69,7 @@ function runEnter() {
         Object.entries(byDate).forEach(function ([key, value]) {
             var cell = row.append("td");
             cell.text(value);
-    
+
         });
     });
 
