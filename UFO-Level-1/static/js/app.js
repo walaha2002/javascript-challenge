@@ -47,7 +47,13 @@ function runEnter() {
     //console.log(tableData);
 
     var filteredData = tableData.filter((date) => date.datetime === inputValue);
-    console.log(filteredData);
+
+    // var filteredData = tableData.filter(date => date.datetime === inputValue ||
+    //     date.city === inputValue ||
+    //     date.state === inputValue ||
+    //     date.country === inputValue ||
+    //     date.shape === inputValue);
+    //console.log(filteredData);
     //return(filteredData);
 
 
