@@ -48,5 +48,10 @@ function runEnter() {
 
     var filteredData = tableData.filter((date) => date.datetime === inputValue);
     console.log(filteredData);
-}
+    //return(filteredData);
 
+    //Select Unordered list element by class name
+    var list = d3.select(".list-group");
+
+
+}
