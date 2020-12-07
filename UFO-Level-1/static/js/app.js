@@ -54,10 +54,22 @@ function runEnter() {
     //var list = d3.select(".list-group");
     var list = d3.select("#filters");
 
-    //Remove any children from the list
-    list.html("");
+    //Remove all data from the table to replace with filtered data
+    tbody.html("");
 
     //Append filtered data to list
-    list.append("li").text(`${filteredData}`);
+    //list.append("li").text(`${filteredData}`);
+
+    //Use function similar to above to display filteredData table
+
+    filteredData.forEach(function (byDate) {
+        //console.log(sightings);
+        var row = tbody.append("tr");
+        Object.entries(byDate).forEach(function ([key, value]) {
+            var cell = row.append("td");
+            cell.text(value);
+    
+        });
+    });
 
 }
