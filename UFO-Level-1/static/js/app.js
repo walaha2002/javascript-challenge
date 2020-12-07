@@ -24,8 +24,8 @@ data.forEach(function (sightings) {
 var button = d3.select("#filter-btn");
 
 //Select the form
-//var form = d3.select(".form-group");
-var form = d3.select("#form");
+var form = d3.select(".form-group");
+//var form = d3.select("#form");
 
 //Create event handlers
 button.on("click", runEnter);
@@ -37,7 +37,7 @@ function runEnter() {
     d3.event.preventDefault();
 
     //Select the input element and get the raw HTMl node
-    var inputElement = d3.select(datetime);
+    var inputElement = d3.select("#datetime");
 
     //Get the value property of the input element
     var inputValue = inputElement.property("value");
