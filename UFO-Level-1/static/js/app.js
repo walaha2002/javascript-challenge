@@ -43,7 +43,6 @@ function runEnter() {
     var inputElement3 = d3.select("#state");
     var inputElement4 = d3.select("#country");
     var inputElement5 = d3.select("#shape");
-    
 
     //Get the value property of the input element
     var inputValue = inputElement.property("value");
@@ -51,15 +50,15 @@ function runEnter() {
     var inputValue3 = inputElement3.property("value");
     var inputValue4 = inputElement4.property("value");
     var inputValue5 = inputElement5.property("value");
-    console.log(inputValue);
+    //console.log(inputValue);
     //console.log(tableData);
 
     //var filteredData = tableData.filter((date) => date.datetime === inputValue);
 
-    var filteredData = tableData.filter(date => date.datetime === inputValue &&
-        date.city === inputValue2 &&
-        date.state === inputValue3 &&
-        date.country === inputValue4 &&
+    var filteredData = tableData.filter(date => date.datetime === inputValue ||
+        date.city === inputValue2 ||
+        date.state === inputValue3 ||
+        date.country === inputValue4 ||
         date.shape === inputValue5);
     //console.log(filteredData);
     //return(filteredData);
@@ -74,7 +73,7 @@ function runEnter() {
 
     //Remove all data from the table to replace with filtered data (Lesson 3, Activity 9)
     tbody.html("");
-  
+
     //Use function similar to above to display filteredData table
 
     filteredData.forEach(function (byDate) {
