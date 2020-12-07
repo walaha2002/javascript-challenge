@@ -43,7 +43,7 @@ function runEnter() {
     var inputElement3 = d3.select("#state");
     var inputElement4 = d3.select("#country");
     var inputElement5 = d3.select("#shape");
-    //var inputElement = d3.select("#datetime");
+    
 
     //Get the value property of the input element
     var inputValue = inputElement.property("value");
@@ -56,10 +56,10 @@ function runEnter() {
 
     //var filteredData = tableData.filter((date) => date.datetime === inputValue);
 
-    var filteredData = tableData.filter(date => date.datetime === inputValue ||
-        date.city === inputValue2 ||
-        date.state === inputValue3 ||
-        date.country === inputValue4 ||
+    var filteredData = tableData.filter(date => date.datetime === inputValue &&
+        date.city === inputValue2 &&
+        date.state === inputValue3 &&
+        date.country === inputValue4 &&
         date.shape === inputValue5);
     //console.log(filteredData);
     //return(filteredData);
