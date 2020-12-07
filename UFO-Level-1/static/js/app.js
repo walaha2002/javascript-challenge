@@ -53,5 +53,7 @@ function runEnter() {
     //Select Unordered list element by class name
     var list = d3.select(".list-group");
 
+    //Remove any children from the list
+    list.html("");
 
 }
