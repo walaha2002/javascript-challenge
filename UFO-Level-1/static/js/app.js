@@ -41,12 +41,16 @@ function runEnter() {
     var inputElement = d3.select("#datetime");
     var inputElement2 = d3.select("#city");
     var inputElement3 = d3.select("#state");
+    var inputElement4 = d3.select("#country");
+    var inputElement5 = d3.select("#shape");
     //var inputElement = d3.select("#datetime");
 
     //Get the value property of the input element
     var inputValue = inputElement.property("value");
     var inputValue2 = inputElement2.property("value");
     var inputValue3 = inputElement3.property("value");
+    var inputValue4 = inputElement4.property("value");
+    var inputValue5 = inputElement5.property("value");
     console.log(inputValue);
     //console.log(tableData);
 
@@ -55,8 +59,8 @@ function runEnter() {
     var filteredData = tableData.filter(date => date.datetime === inputValue ||
         date.city === inputValue2 ||
         date.state === inputValue3 ||
-        date.country === inputValue ||
-        date.shape === inputValue);
+        date.country === inputValue4 ||
+        date.shape === inputValue5);
     //console.log(filteredData);
     //return(filteredData);
 
