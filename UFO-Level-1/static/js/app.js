@@ -39,17 +39,19 @@ function runEnter() {
 
     //Select the input element and get the raw HTMl node
     var inputElement = d3.select("#datetime");
+    var inputElement2 = d3.select("#city");
     //var inputElement = d3.select("#datetime");
 
     //Get the value property of the input element
     var inputValue = inputElement.property("value");
+    var inputValue2 = inputElement2.property("value");
     console.log(inputValue);
     //console.log(tableData);
 
     //var filteredData = tableData.filter((date) => date.datetime === inputValue);
 
     var filteredData = tableData.filter(date => date.datetime === inputValue ||
-        date.city === inputValue ||
+        date.city === inputValue2 ||
         date.state === inputValue ||
         date.country === inputValue ||
         date.shape === inputValue);
