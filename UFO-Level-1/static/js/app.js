@@ -56,4 +56,7 @@ function runEnter() {
     //Remove any children from the list
     list.html("");
 
+    //Append filtered data to list
+    list.append("li").text(`${filteredData}`);
+
 }
