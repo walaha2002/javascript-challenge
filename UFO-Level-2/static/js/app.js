@@ -55,11 +55,19 @@ function runEnter() {
 
     //var filteredData = tableData.filter((date) => date.datetime === inputValue);
 
-    var filteredData = tableData.filter(date => date.datetime === inputValue ||
-        date.city === inputValue2 ||
-        date.state === inputValue3 ||
-        date.country === inputValue4 ||
-        date.shape === inputValue5);
+    // var filteredData = tableData.filter(date => date.datetime === inputValue ||
+    //     date.city === inputValue2 ||
+    //     date.state === inputValue3 ||
+    //     date.country === inputValue4 ||
+    //     date.shape === inputValue5);
+
+    var filteredData = tableData.filter(date => date.datetime === inputValue)
+        .filter(inputValue2)
+        .filter(inputValue3)
+        .filter(inputValue4)
+        .filter(inputValue5);
+    
+
     //console.log(filteredData);
     //return(filteredData);
 
