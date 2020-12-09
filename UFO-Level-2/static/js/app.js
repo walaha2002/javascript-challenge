@@ -53,31 +53,16 @@ function runEnter() {
     //console.log(inputValue);
     //console.log(tableData);
 
-    //var filteredData = tableData.filter((date) => date.datetime === inputValue);
-
-    // var filteredData = tableData.filter(date => date.datetime === inputValue ||
-    //     date.city === inputValue2 ||
-    //     date.state === inputValue3 ||
-    //     date.country === inputValue4 ||
-    //     date.shape === inputValue5);
-
-    // var filteredData = tableData.filter(date => date.datetime === inputValue)
-    //     .filter(inputValue2)
-    //     .filter(inputValue3)
-    //     .filter(inputValue4)
-    //     .filter(inputValue5);
-
-    var filteredData = tableData.filter(date => date.datetime === inputValue)
-        .filter(city.city === inputValue2)
-        .filter(state.state === inputValue3)
-        .filter(country.country === inputValue4)
-        .filter(shape.shape === inputValue5);
     
+//Chaining filters together finally works
+//Source:  https://forum.freecodecamp.org/t/filter-multiple-condition-javascript/341164/3
+    var filteredData = tableData.filter(date => date.datetime === inputValue)
+        .filter(date => date.city === inputValue2)
+        .filter(date => date.state === inputValue3)
+        .filter(date => date.country === inputValue4)
+        .filter(date => date.shape === inputValue5);
 
-    //console.log(filteredData);
-    //return(filteredData);
-
-
+   
     /////////////////////////////////////////////////
 
 
