@@ -61,11 +61,17 @@ function runEnter() {
     //     date.country === inputValue4 ||
     //     date.shape === inputValue5);
 
+    // var filteredData = tableData.filter(date => date.datetime === inputValue)
+    //     .filter(inputValue2)
+    //     .filter(inputValue3)
+    //     .filter(inputValue4)
+    //     .filter(inputValue5);
+
     var filteredData = tableData.filter(date => date.datetime === inputValue)
-        .filter(inputValue2)
-        .filter(inputValue3)
-        .filter(inputValue4)
-        .filter(inputValue5);
+        .filter(date.city === inputValue2)
+        .filter(date.state === inputValue3)
+        .filter(date.country === inputValue4)
+        .filter(date.shape === inputValue5);
     
 
     //console.log(filteredData);
