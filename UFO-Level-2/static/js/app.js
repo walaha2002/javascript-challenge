@@ -68,10 +68,10 @@ function runEnter() {
     //     .filter(inputValue5);
 
     var filteredData = tableData.filter(date => date.datetime === inputValue)
-        .filter(date.city === inputValue2)
-        .filter(date.state === inputValue3)
-        .filter(date.country === inputValue4)
-        .filter(date.shape === inputValue5);
+        .filter(city.city === inputValue2)
+        .filter(state.state === inputValue3)
+        .filter(country.country === inputValue4)
+        .filter(shape.shape === inputValue5);
     
 
     //console.log(filteredData);
