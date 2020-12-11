@@ -53,33 +53,63 @@ function runEnter() {
     //console.log(inputValue);
     //console.log(tableData);
 
-    if (inputValue != "" && inputValue2 == "" && inputValue3 == "") {
+    //This long rambling code is my own!!!
+    // if (inputValue != "" && inputValue2 == "" && inputValue3 == "") {
+    //     var filteredData = tableData.filter(date => date.datetime === inputValue);
+    // }
+    // else if (inputValue != "" && inputValue2 != "" && inputValue3 == "") {
+    //     var filteredData = tableData.filter(date => date.datetime === inputValue)
+    //         .filter(date => date.city === inputValue2);
+    // }
+    // else if (inputValue == "" && inputValue2 != "" && inputValue3 == "") {
+    //     var filteredData = tableData.filter(date => date.city === inputValue2);
+    // }
+
+    // else if (inputValue != "" && inputValue2 != "" && inputValue3 != "") {
+    //     var filteredData = tableData.filter(date => date.datetime === inputValue)
+    //         .filter(date => date.city === inputValue2).filter(date => date.state === inputValue3);
+    // }
+    // else if (inputValue == "" && inputValue2 == "" && inputValue3 != "") {
+    //     var filteredData = tableData.filter(date => date.state === inputValue3);
+    // }
+    // else if (inputValue != "" && inputValue2 == "" && inputValue3 != "") {
+    //     var filteredData = tableData.filter(date => date.datetime === inputValue)
+    //         .filter(date => date.state === inputValue3);
+    // }
+    // else if (inputValue == "" && inputValue2 != "" && inputValue3 != "") {
+    //     var filteredData = tableData.filter(date => date.city === inputValue2)
+    //         .filter(date => date.state === inputValue3);
+    // }
+    ///////////////////////////////////////////////
+
+    if (inputValue != "") {
         var filteredData = tableData.filter(date => date.datetime === inputValue);
-    }
-    else if (inputValue != "" && inputValue2 != "" && inputValue3 == "") {
-        var filteredData = tableData.filter(date => date.datetime === inputValue)
-            .filter(date => date.city === inputValue2);
-    }
-    else if (inputValue == "" && inputValue2 != "" && inputValue3 == "") {
-        var filteredData = tableData.filter(date => date.city === inputValue2);
-    }
+    } else
+        filteredData = data.forEach(function (sightings) {
+            //console.log(sightings);
+            var row = tbody.append("tr");
+            Object.entries(sightings).forEach(function ([key, value]) {
+                var cell = row.append("td");
+                cell.text(value);
 
-    else if (inputValue != "" && inputValue2 != "" && inputValue3 != "") {
-        var filteredData = tableData.filter(date => date.datetime === inputValue)
-            .filter(date => date.city === inputValue2).filter(date => date.state === inputValue3);
-    }
-    else if (inputValue == "" && inputValue2 == "" && inputValue3 != "") {
-        var filteredData = tableData.filter(date => date.state === inputValue3);
-    }
-    else if (inputValue != "" && inputValue2 == "" && inputValue3 != "") {
-        var filteredData = tableData.filter(date => date.datetime === inputValue)
-            .filter(date => date.state === inputValue3);
-    }
-    else if (inputValue == "" && inputValue2 != "" && inputValue3 != "") {
-        var filteredData = tableData.filter(date => date.city === inputValue2)
-            .filter(date => date.state === inputValue3);
-    }
+            });
+        });
+    if (inputValue2 != "") {
+        filteredData = filteredData.filter(date => date.city === inputValue2);
+    } else
+        filteredData = data.forEach(function (sightings) {
+            //console.log(sightings);
+            var row = tbody.append("tr");
+            Object.entries(sightings).forEach(function ([key, value]) {
+                var cell = row.append("td");
+                cell.text(value);
 
+            });
+        });
+
+
+    // var filteredData = tableData.filter(date => date.datetime === inputValue)
+    //     .filter(date => date.city === inputValue2);
 
     // if (inputValue2 != "") {
     //     var filteredCity = tableData.filter(date => date.city === inputValue2);
