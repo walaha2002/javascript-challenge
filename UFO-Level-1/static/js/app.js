@@ -5,7 +5,7 @@ var tableData = data;
 //Get a reference to the table body
 var tbody = d3.select("tbody");
 
-//Console.log the weathwr data from data.js
+//Console.log the weather data from data.js
 console.log(data);
 
 //Use d3 to append 1 cell per sighting value

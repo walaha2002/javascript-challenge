@@ -82,30 +82,30 @@ function runEnter() {
     // }
     ///////////////////////////////////////////////
 
-    if (inputValue != "") {
-        var filteredData = tableData.filter(date => date.datetime === inputValue);
-    } else
-        filteredData = data.forEach(function (sightings) {
-            //console.log(sightings);
-            var row = tbody.append("tr");
-            Object.entries(sightings).forEach(function ([key, value]) {
-                var cell = row.append("td");
-                cell.text(value);
+    // if (inputValue != "") {
+    //     var filteredData = tableData.filter(date => date.datetime === inputValue);
+    // } else
+    //     filteredData = data.forEach(function (sightings) {
+    //         //console.log(sightings);
+    //         var row = tbody.append("tr");
+    //         Object.entries(sightings).forEach(function ([key, value]) {
+    //             var cell = row.append("td");
+    //             cell.text(value);
 
-            });
-        });
-    if (inputValue2 != "") {
-        filteredData = filteredData.filter(date => date.city === inputValue2);
-    } else
-        filteredData = data.forEach(function (sightings) {
-            //console.log(sightings);
-            var row = tbody.append("tr");
-            Object.entries(sightings).forEach(function ([key, value]) {
-                var cell = row.append("td");
-                cell.text(value);
+    //         });
+    //     });
+    // if (inputValue2 != "") {
+    //     filteredData = filteredData.filter(date => date.city === inputValue2);
+    // } else
+    //     filteredData = data.forEach(function (sightings) {
+    //         //console.log(sightings);
+    //         var row = tbody.append("tr");
+    //         Object.entries(sightings).forEach(function ([key, value]) {
+    //             var cell = row.append("td");
+    //             cell.text(value);
 
-            });
-        });
+    //         });
+    //     });
 
 
     // var filteredData = tableData.filter(date => date.datetime === inputValue)
@@ -135,11 +135,11 @@ function runEnter() {
 
     //Chaining filters together finally works
     //Source:  https://forum.freecodecamp.org/t/filter-multiple-condition-javascript/341164/3
-    // var filteredData = tableData.filter(date => date.datetime === inputValue)
-    //     .filter(date => date.city === inputValue2);
-    //     .filter(date => date.state === inputValue3)
-    //     .filter(date => date.country === inputValue4)
-    //     .filter(date => date.shape === inputValue5);
+    var filteredData = tableData.filter(date => date.datetime === inputValue || !inputValue)
+        .filter(date => date.city === inputValue2 || !inputValue2)
+        .filter(date => date.state === inputValue3 | !inputValue3)
+        .filter(date => date.country === inputValue4 || !inputValue4)
+        .filter(date => date.shape === inputValue5 || !inputValue5);
 
     //var filteredData = tableData.filter(filteredDate).filter(filteredCity);
     //var filteredData = filteredDate.filter(filteredCity);
